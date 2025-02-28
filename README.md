@@ -13,7 +13,7 @@
 
 ![Wordle on Email Preview](./preview.gif)
 
-🎮 Wordle on Email is an interactive email-based version of the popular Wordle game. By leveraging AMP for Email, we enable users to play Wordle directly within their email clients without needing to open an external website.
+🎮 Wordle on Email is an interactive email-based version of the popular Wordle game. By leveraging [AMP for Email](https://amp.dev/about/email), we enable users to play Wordle directly within their email clients without needing to open an external website.
 
 ### Contents
 
@@ -35,7 +35,7 @@
 
 ## Why
 
-🖌️ Exploring AMP for Email opens up new possibilities for interactive and dynamic content within emails. Without AMP, emails remain static and outdated, much like coding in the 90s. By leveraging AMP, we can bring modern web-like experiences to the inbox, enhancing user engagement and functionality.
+🖌️ Exploring [AMP for Email](https://amp.dev/about/email) opens up new possibilities for interactive and dynamic content within emails. Without AMP, emails remain static and outdated, much like coding in the 90s. By leveraging AMP, we can bring modern web-like experiences to the inbox, enhancing user engagement and functionality.
 
 ## Limitation
 
