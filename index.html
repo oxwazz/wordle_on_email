@@ -1,0 +1,250 @@
+<!doctype html>
+<html ⚡4email data-css-strict>
+<head>
+    <meta charset="utf-8" />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <style amp4email-boilerplate>body{visibility:hidden}</style>
+    <style amp-custom>
+        .header-correct-spot {
+            height: 20px;
+            width: 20px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #459624;
+            background-color: #459624;
+        }
+        .header-wrong-spot {
+            height: 20px;
+            width: 20px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #C8A212;
+            background-color: #C8A212;
+        }
+        .header-not-listed-letter {
+            height: 20px;
+            width: 20px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #474B4D;
+            background-color: #474B4D;
+        }
+
+        .color-correct-spot {
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #459624;
+            background-color: #459624;
+        }
+        .color-wrong-spot {
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #C8A212;
+            background-color: #C8A212;
+        }
+        .color-not-listed-letter {
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #474B4D;
+            background-color: #474B4D;
+        }
+        .color-empty-spot {
+            height: 50px;
+            width: 50px;
+            color: white;
+            font-weight: 600;
+            border: 2px solid #b2b2b2;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<amp-state id="words">
+    <script type="application/json">
+        [
+            "cache",
+            "debug",
+            "cloud",
+            "token",
+            "proxy",
+            "query",
+            "bytes",
+            "login",
+            "admin",
+            "patch",
+            "stack",
+            "mouse",
+            "board",
+            "virus",
+            "logic",
+            "cyber",
+            "shell"
+        ]
+    </script>
+</amp-state>
+<amp-state id="state">
+    <script type="application/json">
+        {
+            "word": "",
+            "guess": null,
+            "openWordList": false
+        }
+    </script>
+</amp-state>
+<amp-state id="guesses">
+    <script type="application/json">
+        []
+    </script>
+</amp-state>
+
+<!-- FOR DEVELOPMENT ONLY -->
+<!--<p [text]="'word: ' + state.word">no word selected!</p>-->
+
+<table [hidden]="!state.word" style="margin: auto; padding-top: 16px;">
+    <tr align="center">
+        <td class="header-correct-spot">W</td>
+        <td class="header-wrong-spot">O</td>
+        <td class="header-not-listed-letter">R</td>
+        <td class="header-correct-spot">D</td>
+        <td class="header-correct-spot">L</td>
+        <td class="header-wrong-spot">E</td>
+    </tr>
+    <tr>
+        <td colspan="6">
+            <p style="margin: 0; padding: 0; font-weight: 400; font-size: 12px; text-align: center;">
+                on email
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table style="margin: auto; padding-top: 16px;">
+    <tr align="center">
+        <td [class]="!guesses[0][0] ? 'color-empty-spot' : guesses[0][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[0][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[0][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[0][1] ? 'color-empty-spot' : guesses[0][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[0][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[0][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[0][2] ? 'color-empty-spot' : guesses[0][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[0][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[0][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[0][3] ? 'color-empty-spot' : guesses[0][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[0][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[0][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[0][4] ? 'color-empty-spot' : guesses[0][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[0][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[0][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+    <tr align="center">
+        <td [class]="!guesses[1][0] ? 'color-empty-spot' : guesses[1][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[1][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[1][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[1][1] ? 'color-empty-spot' : guesses[1][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[1][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[1][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[1][2] ? 'color-empty-spot' : guesses[1][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[1][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[1][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[1][3] ? 'color-empty-spot' : guesses[1][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[1][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[1][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[1][4] ? 'color-empty-spot' : guesses[1][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[1][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[1][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+    <tr align="center">
+        <td [class]="!guesses[2][0] ? 'color-empty-spot' : guesses[2][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[2][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[2][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[2][1] ? 'color-empty-spot' : guesses[2][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[2][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[2][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[2][2] ? 'color-empty-spot' : guesses[2][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[2][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[2][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[2][3] ? 'color-empty-spot' : guesses[2][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[2][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[2][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[2][4] ? 'color-empty-spot' : guesses[2][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[2][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[2][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+    <tr align="center">
+        <td [class]="!guesses[3][0] ? 'color-empty-spot' : guesses[3][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[3][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[3][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[3][1] ? 'color-empty-spot' : guesses[3][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[3][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[3][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[3][2] ? 'color-empty-spot' : guesses[3][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[3][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[3][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[3][3] ? 'color-empty-spot' : guesses[3][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[3][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[3][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[3][4] ? 'color-empty-spot' : guesses[3][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[3][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[3][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+    <tr align="center">
+        <td [class]="!guesses[4][0] ? 'color-empty-spot' : guesses[4][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[4][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[4][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[4][1] ? 'color-empty-spot' : guesses[4][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[4][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[4][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[4][2] ? 'color-empty-spot' : guesses[4][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[4][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[4][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[4][3] ? 'color-empty-spot' : guesses[4][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[4][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[4][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[4][4] ? 'color-empty-spot' : guesses[4][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[4][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[4][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+    <tr align="center">
+        <td [class]="!guesses[5][0] ? 'color-empty-spot' : guesses[5][0].toLowerCase() == state.word[0].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[5][0].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[5][0] || '&nbsp;'" style="text-transform: uppercase;">&nbsp;</td>
+        <td [class]="!guesses[5][1] ? 'color-empty-spot' : guesses[5][1].toLowerCase() == state.word[1].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[5][1].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[5][1] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[5][2] ? 'color-empty-spot' : guesses[5][2].toLowerCase() == state.word[2].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[5][2].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[5][2] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[5][3] ? 'color-empty-spot' : guesses[5][3].toLowerCase() == state.word[3].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[5][3].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[5][3] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+        <td [class]="!guesses[5][4] ? 'color-empty-spot' : guesses[5][4].toLowerCase() == state.word[4].toLowerCase() ? 'color-correct-spot' : state.word.toLowerCase().indexOf(guesses[5][4].toLowerCase()) >= 0 ? 'color-wrong-spot' : 'color-not-listed-letter'" class="color-empty-spot" [text]="guesses[5][4] || '&nbsp;'" style="text-transform: uppercase">&nbsp;</td>
+    </tr>
+</table>
+
+<table style="margin: auto; padding-top: 16px;">
+    <tr [hidden]="guesses[guesses.length-1].toLowerCase() != state.word.toLowerCase()" hidden align="center">
+        <td>
+            <p style="background-color: #459624; color: white; padding: 8px; font-size: 20px; font-weight: 600;">You Win!!!</p>
+            <button on="tap:AMP.setState({ state: { word: words[floor(random() * words.length)] }, guesses: [] })">Start Over?</button>
+        </td>
+    </tr>
+    <tr [hidden]="state.word" align="center">
+        <td>
+            <button on="tap:AMP.setState({ state: { word: words[floor(random() * words.length)] } })">Start Wordle</button>
+        </td>
+    </tr>
+    <tr [hidden]="guesses.length < 6" hidden align="center">
+        <td>
+            <button on="tap:AMP.setState({ state: { word: words[floor(random() * words.length)] }, guesses: [] })">Start Over?</button>
+        </td>
+    </tr>
+    <tr [hidden]="guesses[guesses.length-1].toLowerCase() == state.word.toLowerCase() || !state.word || guesses.length >= 6" hidden>
+        <td>
+            <input [value]="state.guess || ''" type="text" name="guess" on="input-throttled:AMP.setState({ state: { guess: event.value } })">
+            <button [disabled]="state.guess.length != 5 || !words.some(word => word.toLowerCase() == state.guess.toLowerCase())" disabled on="tap:AMP.setState({ guesses:  guesses.concat([state.guess]), state: { guess: null } });">
+                Answer!
+            </button>
+            <p [text]="state.guess == null ? '&nbsp;' : state.guess.length <= 0 ? 'required field' : state.guess.length != 5 ? 'must input 5 character' : !words.some(word => word.toLowerCase() == state.guess.toLowerCase()) ? 'not in word list!' : '&nbsp;'" style="padding: 0; margin: 0; font-size: 12px; padding-top: 2px; color: red;">
+                &nbsp;
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table style="margin: auto; padding-top: 24px; padding-bottom: 24px;">
+    <tr align="center">
+        <td>
+            <p style="margin: 0; padding: 0; font-weight: 400; font-size: 12px; text-align: center;">
+                made with ❤️ by oxwazz
+                <br/>
+                <a href="https://github.com/oxwazz/wordle_on_email" style="color: #0079da; text-decoration: none;">
+                    source code
+                </a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table style="margin: auto; padding-bottom: 16px;">
+    <tr>
+        <td>
+            <button on="tap:AMP.setState({ state: { openWordList: !state.openWordList } })" [text]="state.openWordList ? 'Hide Word List' : 'Show Word List'" style="background-color: transparent; border: none; color: #0079da; text-decoration: underline;">
+                Show Word List
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul [hidden]="!state.openWordList" hidden style="list-style: none; background-color: #dfdfdf; padding: 16px; border-radius: 8px; font-size: 14px;">
+                <li [text]="'- ' + words[0]">&nbsp;</li>
+                <li [text]="'- ' + words[1]">&nbsp;</li>
+                <li [text]="'- ' + words[2]">&nbsp;</li>
+                <li [text]="'- ' + words[3]">&nbsp;</li>
+                <li [text]="'- ' + words[4]">&nbsp;</li>
+                <li [text]="'- ' + words[5]">&nbsp;</li>
+                <li [text]="'- ' + words[6]">&nbsp;</li>
+                <li [text]="'- ' + words[7]">&nbsp;</li>
+                <li [text]="'- ' + words[8]">&nbsp;</li>
+                <li [text]="'- ' + words[9]">&nbsp;</li>
+                <li [text]="'- ' + words[10]">&nbsp;</li>
+                <li [text]="'- ' + words[11]">&nbsp;</li>
+                <li [text]="'- ' + words[12]">&nbsp;</li>
+                <li [text]="'- ' + words[13]">&nbsp;</li>
+                <li [text]="'- ' + words[14]">&nbsp;</li>
+                <li [text]="'- ' + words[15]">&nbsp;</li>
+                <li [text]="'- ' + words[16]">&nbsp;</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
