@@ -109,8 +109,38 @@
         </amp-state>
 
         <!-- LOGGING - FOR DEVELOPMENT ONLY  -->
+
         <!-- <p [text]="'word: ' + (state.word || '')">word:</p> -->
         <!-- <p [text]="'gameState: ' + (state.gameState || '')">gameState:</p> -->
+
+        <!-- TESTING NOTE -->
+
+        <!-- stack -> aaaaa -->
+        <!-- grey-grey-green-grey-grey -->
+
+        <!-- stack -> aaaab -->
+        <!-- grey-grey-green-grey-grey -->
+
+        <!-- stack -> bbbaa -->
+        <!-- grey-grey-grey-grey-yellow -->
+
+        <!-- stack -> babaa -->
+        <!-- grey-grey-grey-grey-yellow -->
+
+        <!-- stack -> aabbb -->
+        <!-- grey-yellow-grey-grey-grey -->
+
+        <!-- still -> lllbt -->
+        <!-- grey-yellow-yellow-grey-yellow -->
+
+        <!-- still -> llllt -->
+        <!-- grey-grey-yellow-green-yellow -->
+
+        <!-- still -> ltill -->
+        <!-- grey-green-green-green-green -->
+
+        <!-- still -> ltila -->
+        <!-- yellow-green-green-green-grey -->
 
         <!-- HEADER -->
         <table [hidden]="!state.word" style="margin: auto; padding-top: 16px;">
@@ -246,7 +276,10 @@
                                             : guessChar.toLowerCase() == state.word[guessCharIndex].toLowerCase()
                                                 ? 'color-correct-spot tile-size'
                                                 : state.word.toLowerCase().indexOf(guessChar.toLowerCase()) >= 0
-                                                  && state.word.toLowerCase().split('').filter(v => v == guessChar.toLowerCase()).length
+                                                  && (
+                                                    state.word.toLowerCase().split('').filter(v => v == guessChar.toLowerCase()).length
+                                                    - state.word.toLowerCase().slice(0, guessCharIndex+1).split('').filter((v, idx) => v == state.guess[idx].toLowerCase()).length
+                                                  )
                                                      >= state.guess.toLowerCase().slice(guessCharIndex).split('').filter(v => v == guessChar.toLowerCase()).length
                                                     ? 'color-wrong-spot tile-size'
                                                     : 'color-not-listed-letter tile-size'
