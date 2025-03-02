@@ -21,44 +21,38 @@
 
             .show { }
 
-            .logo-size {
+            .logo-default {
+                text-transform: uppercase;
+                color: white;
+                font-weight: 600;
                 height: 20px;
                 width: 20px;
             }
 
-            .tile-size {
+            .tile-default {
+                text-transform: uppercase;
+                color: white;
+                font-weight: 600;
                 height: 50px;
                 width: 50px;
             }
 
             .color-correct-spot {
-                text-transform: uppercase;
-                color: white;
-                font-weight: 600;
                 border: 2px solid #459624;
                 background-color: #459624;
             }
 
             .color-wrong-spot {
-                text-transform: uppercase;
-                color: white;
-                font-weight: 600;
                 border: 2px solid #C8A212;
                 background-color: #C8A212;
             }
 
             .color-not-listed-letter {
-                text-transform: uppercase;
-                color: white;
-                font-weight: 600;
                 border: 2px solid #474B4D;
                 background-color: #474B4D;
             }
 
             .color-empty-spot {
-                text-transform: uppercase;
-                color: white;
-                font-weight: 600;
                 border: 2px solid #b2b2b2;
                 background-color: white;
             }
@@ -148,12 +142,12 @@
         <!-- HEADER -->
         <table [hidden]="!state.word" style="margin: auto; padding-top: 16px;">
             <tr align="center">
-                <td class="color-correct-spot logo-size">W</td>
-                <td class="color-wrong-spot logo-size">O</td>
-                <td class="color-not-listed-letter logo-size">R</td>
-                <td class="color-correct-spot logo-size">D</td>
-                <td class="color-correct-spot logo-size">L</td>
-                <td class="color-wrong-spot logo-size">E</td>
+                <td class="color-correct-spot logo-default">W</td>
+                <td class="color-wrong-spot logo-default">O</td>
+                <td class="color-not-listed-letter logo-default">R</td>
+                <td class="color-correct-spot logo-default">D</td>
+                <td class="color-correct-spot logo-default">L</td>
+                <td class="color-wrong-spot logo-default">E</td>
             </tr>
             <tr>
                 <td colspan="6">
@@ -167,46 +161,46 @@
         <!-- GUESSES -->
         <table style="margin: auto; padding-top: 16px;">
             <tr align="center">
-                <td [class]="guessesColors[0][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[0][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[0][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[0][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[0][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[0][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[0][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[0][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[0][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[0][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[0][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[0][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[0][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[0][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[0][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[0][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[0][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[0][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[0][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[0][4] || '&nbsp;'">&nbsp;</td>
             </tr>
             <tr align="center">
-                <td [class]="guessesColors[1][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[1][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[1][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[1][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[1][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[1][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[1][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[1][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[1][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[1][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[1][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[1][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[1][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[1][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[1][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[1][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[1][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[1][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[1][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[1][4] || '&nbsp;'">&nbsp;</td>
             </tr>
             <tr align="center">
-                <td [class]="guessesColors[2][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[2][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[2][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[2][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[2][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[2][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[2][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[2][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[2][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[2][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[2][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[2][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[2][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[2][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[2][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[2][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[2][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[2][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[2][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[2][4] || '&nbsp;'">&nbsp;</td>
             </tr>
             <tr align="center">
-                <td [class]="guessesColors[3][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[3][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[3][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[3][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[3][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[3][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[3][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[3][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[3][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[3][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[3][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[3][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[3][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[3][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[3][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[3][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[3][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[3][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[3][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[3][4] || '&nbsp;'">&nbsp;</td>
             </tr>
             <tr align="center">
-                <td [class]="guessesColors[4][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[4][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[4][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[4][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[4][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[4][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[4][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[4][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[4][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[4][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[4][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[4][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[4][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[4][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[4][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[4][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[4][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[4][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[4][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[4][4] || '&nbsp;'">&nbsp;</td>
             </tr>
             <tr align="center">
-                <td [class]="guessesColors[5][0] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[5][0] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[5][1] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[5][1] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[5][2] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[5][2] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[5][3] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[5][3] || '&nbsp;'">&nbsp;</td>
-                <td [class]="guessesColors[5][4] || 'color-empty-spot tile-size'" class="color-empty-spot tile-size" [text]="guesses[5][4] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[5][0] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[5][0] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[5][1] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[5][1] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[5][2] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[5][2] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[5][3] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[5][3] || '&nbsp;'">&nbsp;</td>
+                <td [class]="guessesColors[5][4] || 'color-empty-spot tile-default'" class="color-empty-spot tile-default" [text]="guesses[5][4] || '&nbsp;'">&nbsp;</td>
             </tr>
         </table>
 
@@ -275,17 +269,17 @@
                                     guesses: guesses.concat([state.guess]),
                                     guessesColors: guessesColors.concat([
                                         state.guess.split('').map((guessChar, guessCharIndex) => !guessChar
-                                            ? 'color-empty-spot tile-size'
+                                            ? 'color-empty-spot tile-default'
                                             : guessChar.toLowerCase() == state.word[guessCharIndex].toLowerCase()
-                                                ? 'color-correct-spot tile-size'
+                                                ? 'color-correct-spot tile-default'
                                                 : state.word.toLowerCase().indexOf(guessChar.toLowerCase()) >= 0
                                                   && (
                                                     state.word.toLowerCase().split('').filter(v => v == guessChar.toLowerCase()).length
                                                     - state.word.toLowerCase().slice(0, guessCharIndex+1).split('').filter((v, idx) => v == state.guess[idx].toLowerCase()).length
                                                   )
                                                      >= state.guess.toLowerCase().slice(guessCharIndex).split('').filter(v => v == guessChar.toLowerCase()).length
-                                                    ? 'color-wrong-spot tile-size'
-                                                    : 'color-not-listed-letter tile-size'
+                                                    ? 'color-wrong-spot tile-default'
+                                                    : 'color-not-listed-letter tile-default'
                                         )
                                     ]),
                                 });"
