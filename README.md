@@ -39,7 +39,7 @@
 
 ## Limitation
 
-📐 The only limitation is from AMP itself, you can [read more](https://developers.google.com/gmail/ampemail/tips) about it.
+📐 The only limitation is from AMP itself, you can [read more](https://developers.google.com/gmail/ampemail/tips) about it, and also you can see the detail of [WG amp for email](https://github.com/ampproject/amphtml/tree/main/docs/spec/email).
 
 ## Credit
 
